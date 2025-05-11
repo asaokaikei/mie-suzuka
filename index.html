@@ -3,280 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会計事務所ウェブサイト草案</title>
+    <title>麻生税務会計事務所 - 信頼と実績の会計パートナー</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            scroll-behavior: smooth; /* スムーズスクロールを有効に */
         }
-        .hero-section {
-            background-image: url('https://placehold.co/1200x600/e2e8f0/cbd5e0?text=会計事務所のイメージ画像'); /* Placeholder image */
+        /* 基本の青系カラー */
+        .bg-primary-dark { background-color: #002244; } /* より深い青 - 信頼感、安定感 */
+        .text-primary-dark { color: #002244; }
+        .border-primary-dark { border-color: #002244; }
+
+        .bg-primary-accent { background-color: #00509E; } /* アクセントの青 - 知性、誠実さ */
+        .text-primary-accent { color: #00509E; }
+        .hover-bg-primary-accent:hover { background-color: #003D7A; }
+
+
+        .header-main-bg { /* メインヘッダーの背景 */
+            /* 信頼と実績をイメージさせる落ち着いた背景画像（プレースホルダー） */
+            /* 実際の画像URLに差し替えてください。例: background-image: url('your-trustworthy-image.jpg'); */
+            background-image: url('https://placehold.co/1920x1080/002244/E0E0E0?text=信頼と実績のイメージ'); /* 背景色を少し明るく */
             background-size: cover;
             background-position: center;
+            position: relative;
         }
+        .header-main-bg::before { /* 背景画像の上にオーバーレイ */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 34, 68, 0.7); /* 濃い青の半透明度 */
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
         .section-title {
-            @apply text-3xl font-bold text-center mb-8 text-gray-800;
+            font-size: 2rem; /* 32px */
+            font-weight: 700;
+            margin-bottom: 2.5rem; /* 40px */
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem; /* 16px */
+            color: #002244; /* タイトルカラーを深い青に */
         }
-        .service-card, .testimonial-card, .news-card {
-            @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 70px;
+            height: 3px;
+            background-color: #00509E; /* アクセントカラー */
+            border-radius: 1.5px;
         }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem; /* 8px */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* ソフトな影 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        .btn-cta { /* Call to Action Button */
+            background-color: #00509E; /* アクセントカラー */
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.375rem; /* 6px */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 80, 158, 0.2);
+        }
+        .btn-cta:hover {
+            background-color: #003D7A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 61, 122, 0.3);
+        }
+        .profile-img-placeholder, .profile-img-actual { /* 共通スタイルと実際の画像用スタイル */
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 2px solid #00509E; /* アクセントカラーの細い枠 */
+        }
+        .profile-img-placeholder { /* プレースホルダー特有のスタイル */
+            background-color: #f0f4f8; /* 明るい背景色 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568; /* テキストカラー */
+            font-size: 0.875rem;
+        }
+        .profile-img-actual { /* 実際の画像用スタイル */
+            object-fit: cover; /* 画像がエリアをカバーするように、アスペクト比を維持しつつトリミングされる可能性あり */
+            object-position: center; /* 特に縦長の画像の場合、中央を優先して表示 */
+        }
+
+        .service-icon {
+            font-size: 2.25rem; /* 36px */
+            margin-bottom: 0.75rem; /* 12px */
+            color: #00509E; /* アクセントカラー */
+        }
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 0.375rem; /* 6px */
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border:0;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.95); /* 背景の透明度を少し下げる */
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        nav a {
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00509E;
+        }
+        .firm-name-furigana {
+            font-size: 0.9rem; /* フリガナのフォントサイズ */
+            color: #e0e0e0; /* フリガナの色、ヘッダー背景とのコントラストを考慮 */
+            letter-spacing: 0.05em; /* 文字間隔を少し広げる */
+            display: block; /* ブロック要素にして改行 */
+            margin-top: 0.25rem; /* 事務所名との間隔 */
+        }
+
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-700 leading-relaxed">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">〇〇会計事務所</a>
-            <nav class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-blue-600">事務所概要</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-600">サービス</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-blue-600">お客様の声</a>
-                <a href="#news" class="text-gray-600 hover:text-blue-600">お知らせ</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">お問い合わせ</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+    <nav class="py-3">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary-dark">麻生税務会計事務所</a>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#representatives" class="text-gray-600 hover:text-primary-accent">代表者紹介</a>
+                <a href="#office-info" class="text-gray-600 hover:text-primary-accent">事務所概要</a>
+                <a href="#services" class="text-gray-600 hover:text-primary-accent">サービス内容</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary-accent">お問い合わせ</a>
+            </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">事務所概要</a>
-            <a href="#services" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">サービス</a>
-            <a href="#testimonials" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">お客様の声</a>
-            <a href="#news" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">お知らせ</a>
-            <a href="#contact" class="block px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors text-center">お問い合わせ</a>
+    </nav>
+
+    <header class="header-main-bg text-white py-28 md:py-36">
+        <div class="header-content container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">麻生税務会計事務所</h1>
+            <span class="firm-name-furigana">あさおぜいむかいけいじむしょ</span>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mt-4 mb-8">
+                揺るぎない信頼と豊富な実績で、お客様の持続的な成長を誠実にサポートします。
+            </p>
+            <a href="#contact" class="btn-cta px-8 py-3 text-base">
+                <i class="fas fa-phone-alt mr-2"></i> まずは無料相談へ
+            </a>
         </div>
     </header>
 
-    <section class="hero-section text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">未来を照らす、信頼のパートナー</h1>
-            <p class="text-lg md:text-2xl mb-8 drop-shadow-md">お客様のビジネス成長と安心を全力でサポートします。</p>
-            <a href="#contact" class="bg-yellow-500 text-gray-800 px-8 py-3 rounded-md text-lg font-semibold hover:bg-yellow-400 transition-colors">無料相談はこちら</a>
-        </div>
-    </section>
-
-    <section id="features" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">当事務所の強み</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-lg">
-                    <div class="bg-blue-100 text-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <main>
+        <section id="representatives" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">代表者紹介</h2>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+                    <div class="card p-6">
+                        <img src="images/麻生健治.jpg" alt="麻生健治氏 写真" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display:none;"><span>健治氏 写真</span></div>
+                        <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 健治</h3>
+                        <p class="text-primary-accent font-medium mb-3 text-center">税理士</p>
+                        <div class="text-sm text-gray-600 space-y-2">
+                            <p class="font-medium">ご挨拶:</p>
+                            <p>お客様のビジネスの成長と安定を全力でサポートいたします。税務に関するあらゆるご相談に対応し、最適な解決策をご提案します。長年の経験と専門知識を活かし、信頼されるパートナーとして貢献してまいります。</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-700">専門性と経験</h3>
-                    <p class="text-gray-600">長年の経験と最新の税法知識で、複雑な案件にも対応します。</p>
-                </div>
-                <div class="p-6 rounded-lg">
-                    <div class="bg-blue-100 text-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>
+                    <div class="card p-6">
+                        <img src="images/麻生高志.jpg" alt="麻生高志氏 写真" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display:none;"><span>高志氏 写真</span></div>
+                        <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 高志</h3>
+                        <p class="text-primary-accent font-medium mb-3 text-center">公認会計士・事業承継・M&Aエキスパート</p>
+                        <div class="text-sm text-gray-600 space-y-3">
+                            <p><strong>出身:</strong> 1984年 三重県鈴鹿市生まれ</p>
+                            <div>
+                                <p><strong>学歴:</strong></p>
+                                <ul class="list-none ml-1 space-y-0.5">
+                                    <li>2003年 鈴鹿中学高等学校 卒業</li>
+                                    <li>2007年 一橋大学商学部 卒業</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p><strong>主な職務経歴:</strong></p>
+                                <ul class="list-none ml-1 space-y-1">
+                                    <li>2006年 公認会計士試験 合格</li>
+                                    <li>2007年 あずさ監査法人 入社</li>
+                                    <li>2013年 税理士法人平成会計社 入社</li>
+                                    <li>2015年 株式会社青山トラスト会計社 入社</li>
+                                    <li>2022年 麻生税務会計事務所 勤務</li> </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-700">親身なサポート</h3>
-                    <p class="text-gray-600">お客様一人ひとりに寄り添い、最適な解決策をご提案します。</p>
                 </div>
-                <div class="p-6 rounded-lg">
-                    <div class="bg-blue-100 text-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+        </section>
+
+        <section id="office-info" class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">事務所概要</h2>
+                <div class="grid md:grid-cols-5 gap-8 md:gap-10 items-center">
+                    <div class="md:col-span-2 card p-6">
+                        <h3 class="text-lg font-semibold text-primary-dark mb-4">事務所情報</h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <p><strong class="w-24 inline-block"><i class="fas fa-map-marker-alt mr-2 text-primary-accent"></i>所在地:</strong> 〒513-0806<br class="sm:hidden"><span class="ml-28 sm:ml-0"></span>三重県鈴鹿市算所5-24-22</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-phone-alt mr-2 text-primary-accent"></i>電話番号:</strong> 059-378-4343</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-fax mr-2 text-primary-accent"></i>FAX:</strong> 059-378-8684</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-700">迅速な対応</h3>
-                    <p class="text-gray-600">お問い合わせやご相談には、スピーディーに対応いたします。</p>
+                    <div class="md:col-span-3 card p-4">
+                        <h3 class="text-lg font-semibold text-primary-dark mb-3 text-center">アクセスマップ</h3>
+                        <div class="map-container">
+                             <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E9%88%B4%E9%B9%BF%E5%B8%82%E7%AE%97%E6%89%805-24-22&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">サービス内容</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">税務顧問・税務申告</h3>
-                    <p class="text-gray-600 mb-4">法人税、所得税、消費税などの各種申告業務、節税対策アドバイス。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">記帳代行・経理サポート</h3>
-                    <p class="text-gray-600 mb-4">日々の記帳業務から月次決算、給与計算まで幅広くサポート。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">相続・事業承継支援</h3>
-                    <p class="text-gray-600 mb-4">相続税対策、遺言書作成支援、スムーズな事業承継をサポート。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">経営コンサルティング</h3>
-                    <p class="text-gray-600 mb-4">資金調達支援、経営計画策定、業務改善など経営全般をサポート。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">会社設立支援</h3>
-                    <p class="text-gray-600 mb-4">設立手続きから設立後の税務・会計までトータルサポート。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">その他専門サービス</h3>
-                    <p class="text-gray-600 mb-4">国際税務、M&A支援など、専門性の高いサービスも提供。</p>
-                    <a href="#" class="text-blue-500 hover:underline">詳しく見る &rarr;</a>
+        <section id="services" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">サービス内容</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="card p-6 text-center">
+                        <i class="fas fa-calculator service-icon"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">税務申告（法人・個人）</h3>
+                        <p class="text-xs text-gray-500">最新の税法に基づき、法人税・所得税・消費税等の各種申告を正確に行います。</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">M&A・事業承継支援</h3>
+                        <p class="text-xs text-gray-500">M&A戦略策定、デューデリジェンス、事業承継計画の立案・実行まで総合的にサポートします。</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <i class="fas fa-users service-icon"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">相続対策・相続税申告</h3>
+                        <p class="text-xs text-gray-500">円満な資産承継のための生前対策から、複雑な相続税申告まで専門家が丁寧に対応します。</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <i class="fas fa-chart-pie service-icon"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">経営管理の導入支援</h3>
+                        <p class="text-xs text-gray-500">予算管理や資金繰り管理体制の構築を支援し、企業の持続的成長をサポートします。</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <i class="fas fa-lightbulb service-icon"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">経営効率化サポート</h3>
+                        <p class="text-xs text-gray-500">業務プロセスの見直しやIT活用を通じ、お客様の経営効率化をお手伝いします。</p>
+                    </div>
+                     <div class="card p-6 text-center bg-gray-50">
+                        <i class="fas fa-info-circle service-icon text-primary-accent"></i>
+                        <h3 class="text-lg font-semibold text-primary-dark mb-2">その他経営相談</h3>
+                        <p class="text-xs text-gray-500">上記以外の経営に関するお悩みも、お気軽にご相談ください。</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="testimonials" class="py-16 bg-blue-50">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">お客様の声</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"親身になって相談に乗っていただき、経営課題が明確になりました。本当に感謝しています。"</p>
-                    <p class="text-gray-800 font-semibold">株式会社A様 代表取締役</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"複雑な相続手続きをスムーズに進めていただきました。説明も丁寧で安心できました。"</p>
-                    <p class="text-gray-800 font-semibold">B様</p>
-                </div>
-                 <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"毎月の試算表が分かりやすく、経営判断に役立っています。レスポンスも早くて助かります。"</p>
-                    <p class="text-gray-800 font-semibold">合同会社C様 CEO</p>
-                </div>
-                 <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"初めての会社設立で不安でしたが、一から丁寧にサポートしていただき、無事に開業できました。"</p>
-                    <p class="text-gray-800 font-semibold">D商店 店主</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="news" class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">お知らせ</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="news-card">
-                    <img src="https://placehold.co/600x400/d1d5db/4b5563?text=お知らせ画像1" alt="お知らせ画像1" class="rounded-t-lg mb-4 w-full h-48 object-cover">
-                    <span class="text-sm text-gray-500">2025年5月8日</span>
-                    <h3 class="text-lg font-semibold my-2 text-blue-600">夏季休業のお知らせ</h3>
-                    <p class="text-gray-600 text-sm mb-3">誠に勝手ながら、以下の期間を夏季休業とさせていただきます...</p>
-                    <a href="#" class="text-blue-500 hover:underline text-sm">続きを読む &rarr;</a>
-                </div>
-                <div class="news-card">
-                    <img src="https://placehold.co/600x400/d1d5db/4b5563?text=お知らせ画像2" alt="お知らせ画像2" class="rounded-t-lg mb-4 w-full h-48 object-cover">
-                    <span class="text-sm text-gray-500">2025年4月15日</span>
-                    <h3 class="text-lg font-semibold my-2 text-blue-600">【セミナー開催】最新税制改正セミナー</h3>
-                    <p class="text-gray-600 text-sm mb-3">〇月〇日に最新の税制改正に関する無料セミナーを開催します...</p>
-                    <a href="#" class="text-blue-500 hover:underline text-sm">続きを読む &rarr;</a>
-                </div>
-                <div class="news-card">
-                    <img src="https://placehold.co/600x400/d1d5db/4b5563?text=お知らせ画像3" alt="お知らせ画像3" class="rounded-t-lg mb-4 w-full h-48 object-cover">
-                    <span class="text-sm text-gray-500">2025年3月1日</span>
-                    <h3 class="text-lg font-semibold my-2 text-blue-600">ウェブサイトをリニューアルしました</h3>
-                    <p class="text-gray-600 text-sm mb-3">日頃より当事務所をご利用いただき、誠にありがとうございます...</p>
-                    <a href="#" class="text-blue-500 hover:underline text-sm">続きを読む &rarr;</a>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-md hover:bg-gray-300 transition-colors">お知らせ一覧を見る</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">事務所概要</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">〇〇会計事務所</h3>
-                    <p class="text-gray-600 mb-2"><strong>代表税理士:</strong> 〇〇 〇〇</p>
-                    <p class="text-gray-600 mb-2"><strong>所在地:</strong> 〒XXX-XXXX 東京都〇〇区〇〇町1-2-3 〇〇ビル5F</p>
-                    <p class="text-gray-600 mb-2"><strong>電話番号:</strong> 03-XXXX-XXXX</p>
-                    <p class="text-gray-600 mb-2"><strong>FAX番号:</strong> 03-XXXX-XXXX</p>
-                    <p class="text-gray-600 mb-2"><strong>営業時間:</strong> 平日 9:00～17:00 (土日祝休)</p>
-                    <p class="text-gray-600 mb-4"><strong>アクセス:</strong> JR〇〇駅より徒歩5分 / 地下鉄〇〇線〇〇駅より徒歩3分</p>
-                    <p class="text-gray-600">
-                        [ここに事務所の理念や代表者からのご挨拶などを記述します。お客様へのメッセージや、事務所が大切にしていることなどを具体的に記載すると良いでしょう。]
-                    </p>
-                </div>
-                <div>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828039609194!2d139.7649363152584!3d35.68123628019436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2sTokyo%20Station!5e0!3m2!1sen!2sjp!4v1652000000000!5m2!1sen!2sjp" 
-                        width="100%" 
-                        height="350" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="事務所所在地地図">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-blue-600 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">お気軽にご相談ください</h2>
-            <p class="text-lg mb-8">税務・会計に関するお悩みやご相談がございましたら、まずはお気軽にお問い合わせください。<br>初回相談は無料です。</p>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-                <a href="tel:03-XXXX-XXXX" class="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition-colors w-full md:w-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    お電話でのお問い合わせ (03-XXXX-XXXX)
+        <section id="contact" class="py-16 md:py-20 bg-primary-dark">
+            <div class="header-content container mx-auto px-6 text-center">
+                <h2 class="section-title text-white">お問い合わせ</h2>
+                <p class="text-base text-gray-300 mb-8 max-w-xl mx-auto">
+                    税務・会計、経営に関するご相談は、下記フォームよりお気軽にお寄せください。
+                    担当者が確認後、迅速にご連絡いたします。
+                </p>
+                <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" class="btn-cta bg-white text-primary-dark hover:bg-gray-200 px-8 py-3 text-base">
+                    <i class="fas fa-envelope mr-2"></i> お問い合わせフォームへ
                 </a>
-                <a href="mailto:info@example.com" class="bg-yellow-500 text-gray-800 px-8 py-3 rounded-md text-lg font-semibold hover:bg-yellow-400 transition-colors w-full md:w-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    メールフォームでお問い合わせ
-                </a>
+                <p class="text-xs text-gray-400 mt-4">（Googleフォームが新しいタブで開きます）</p>
+                <div class="mt-8 text-gray-300">
+                    <p class="font-medium text-sm">お問い合わせフォーム入力項目 (例):</p>
+                    <ul class="list-disc list-inside inline-block text-left mt-1 text-xs">
+                        <li>会社名・屋号</li>
+                        <li>ご担当者様氏名</li>
+                        <li>連絡先（電話番号、メールアドレス）</li>
+                        <li>ご希望の面談日時（あれば）</li>
+                        <li>ご相談内容の概要</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <div class="mb-4">
-                <a href="#" class="hover:text-white px-2">事務所概要</a>|
-                <a href="#" class="hover:text-white px-2">サービス</a>|
-                <a href="#" class="hover:text-white px-2">料金案内</a>|
-                <a href="#" class="hover:text-white px-2">プライバシーポリシー</a>|
-                <a href="#" class="hover:text-white px-2">サイトマップ</a>
-            </div>
-            <p>&copy; 2025 〇〇会計事務所. All Rights Reserved.</p>
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-xs">© <span id="currentYear"></span> 麻生税務会計事務所. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // モバイルメニューのトグル
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // スムーズスクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (this.getAttribute('href') !== "#") { // hrefが"#"のみの場合は何もしない
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                         // モバイルメニューが開いていれば閉じる
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
