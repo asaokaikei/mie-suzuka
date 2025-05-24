@@ -3,55 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>麻生税務会計事務所 - 信頼と実績の会計パートナー</title>
+    <title>麻生税務会計事務所｜鈴鹿市の税理士・相続・M&A相談</title>
+    <meta name="description" content="鈴鹿市の麻生税務会計事務所です。法人・個人の税務申告から、相続対策、M&A支援まで、経験豊富な税理士が親身に対応いたします。初回相談無料。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Noto Sans JP', 'Inter', sans-serif;
-            scroll-behavior: smooth; /* スムーズスクロールを有効に */
+            scroll-behavior: smooth;
+            font-size: 17px; 
         }
-        /* 基本の青系カラー */
-        .bg-primary-dark { background-color: #002244; } /* より深い青 - 信頼感、安定感 */
+        .bg-primary-dark { background-color: #002244; }
         .text-primary-dark { color: #002244; }
         .border-primary-dark { border-color: #002244; }
 
-        .bg-primary-accent { background-color: #00509E; } /* アクセントの青 - 知性、誠実さ */
+        .bg-primary-accent { background-color: #00509E; }
         .text-primary-accent { color: #00509E; }
         .hover-bg-primary-accent:hover { background-color: #003D7A; }
 
-
-        .header-main-bg { /* メインヘッダーの背景 */
-            /* 信頼と実績をイメージさせる落ち着いた背景画像（プレースホルダー） */
-            /* 実際の画像URLに差し替えてください。例: background-image: url('your-trustworthy-image.jpg'); */
-            background-image: url('https://placehold.co/1920x1080/002244/E0E0E0?text=信頼と実績のイメージ'); /* 背景色を少し明るく */
+        .header-main-bg {
+            /* background-image はJavaScriptで設定 */
             background-size: cover;
             background-position: center;
             position: relative;
+            transition: opacity 0.5s ease-in-out; 
+            padding-top: 10rem; 
+            padding-bottom: 10rem; 
         }
-        .header-main-bg::before { /* 背景画像の上にオーバーレイ */
+        .header-main-bg::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 34, 68, 0.7); /* 濃い青の半透明度 */
+            background-color: rgba(0, 34, 68, 0.75); 
         }
         .header-content {
             position: relative;
             z-index: 1;
         }
+        .header-content h1 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6); 
+            font-size: 2.75rem; 
+        }
+        @media (min-width: 768px) { 
+            .header-content h1 {
+                font-size: 3.25rem; 
+            }
+        }
+        .header-content .firm-name-furigana {
+            font-size: 1rem; 
+            color: #e0e0e0; 
+            letter-spacing: 0.05em;
+            display: block;
+            margin-top: 0.35rem; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+        }
+        .header-content .text-gray-200 { 
+            font-size: 1.2rem; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
 
         .section-title {
-            font-size: 2rem; /* 32px */
+            font-size: 2.25rem; 
             font-weight: 700;
-            margin-bottom: 2.5rem; /* 40px */
+            margin-bottom: 2.5rem;
             text-align: center;
             position: relative;
-            padding-bottom: 1rem; /* 16px */
-            color: #002244; /* タイトルカラーを深い青に */
+            padding-bottom: 1rem;
+            color: #002244;
         }
         .section-title::after {
             content: '';
@@ -61,26 +84,42 @@
             bottom: 0;
             width: 70px;
             height: 3px;
-            background-color: #00509E; /* アクセントカラー */
+            background-color: #00509E;
             border-radius: 1.5px;
         }
+        
+        #contact .section-title.text-white {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        
+        #contact .contact-description-text {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
         .card {
             background-color: white;
-            border-radius: 0.5rem; /* 8px */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* ソフトな影 */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            display: flex; 
+            flex-direction: column; 
+        }
+        .card-content {
+            flex-grow: 1; 
+            padding: 1.5rem; 
         }
         .card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
-        .btn-cta { /* Call to Action Button */
-            background-color: #00509E; /* アクセントカラー */
+        .btn-cta {
+            background-color: #00509E;
             color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.375rem; /* 6px */
+            padding: 0.85rem 2rem; 
+            border-radius: 0.375rem;
             font-weight: 600;
+            font-size: 1.05rem; 
             transition: background-color 0.3s ease, transform 0.2s ease;
             text-decoration: none;
             display: inline-block;
@@ -91,37 +130,101 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 61, 122, 0.3);
         }
-        .profile-img-placeholder, .profile-img-actual { /* 共通スタイルと実際の画像用スタイル */
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            border: 2px solid #00509E; /* アクセントカラーの細い枠 */
+        .btn-contact-form {
+            background-color: #00509E;
+            color: white;
+            padding: 0.95rem 2.25rem; 
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 1.05rem; 
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 80, 158, 0.3);
         }
-        .profile-img-placeholder { /* プレースホルダー特有のスタイル */
-            background-color: #f0f4f8; /* 明るい背景色 */
+        .btn-contact-form:hover {
+            background-color: #003D7A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 61, 122, 0.4);
+        }
+
+        .profile-img-placeholder, .profile-img-actual {
+            width: 170px; 
+            height: 170px; 
+            border-radius: 50%;
+            margin: 0 auto 1.5rem; 
+            border: 3px solid #00509E; 
+        }
+        .profile-img-placeholder {
+            background-color: #f0f4f8;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4a5568; /* テキストカラー */
+            color: #4a5568;
             font-size: 0.875rem;
         }
-        .profile-img-actual { /* 実際の画像用スタイル */
-            object-fit: cover; /* 画像がエリアをカバーするように、アスペクト比を維持しつつトリミングされる可能性あり */
-            object-position: center; /* 特に縦長の画像の場合、中央を優先して表示 */
+        .profile-img-actual {
+            object-fit: cover;
+            object-position: center;
+        }
+        .profile-text { 
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #333; 
+            text-align: left; 
+        }
+        .profile-text strong {
+            font-weight: 600;
+            color: #002244; 
+        }
+        .profile-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .profile-text ul li {
+            margin-bottom: 0.3rem;
+        }
+
+
+        .feature-icon { 
+            font-size: 2.75rem; 
+            margin-bottom: 1rem;
+            color: #00509E; 
+        }
+        .feature-card-title { 
+            font-size: 1.35rem; 
+            font-weight: 600;
+            color: #002244; 
+            margin-bottom: 0.5rem;
+        }
+        .feature-card-description { 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+            color: #4A5568; 
         }
 
         .service-icon {
-            font-size: 2.25rem; /* 36px */
-            margin-bottom: 0.75rem; /* 12px */
-            color: #00509E; /* アクセントカラー */
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            color: #00509E;
         }
+        .service-card-title {
+            font-size: 1.2rem; 
+            line-height: 1.75rem; 
+            min-height: 3.5rem; 
+        }
+        .service-card-description {
+            font-size: 0.9rem; 
+            line-height: 1.5rem; 
+            color: #4A5568; 
+        }
+
         .map-container {
             position: relative;
             overflow: hidden;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            border-radius: 0.375rem; /* 6px */
+            padding-top: 56.25%; 
+            border-radius: 0.375rem; 
         }
         .map-container iframe {
             position: absolute;
@@ -137,90 +240,335 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background-color: rgba(255, 255, 255, 0.95); /* 背景の透明度を少し下げる */
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding-top: 0.75rem; 
+            padding-bottom: 0.75rem; 
         }
-        nav a {
-            transition: color 0.3s ease;
+        nav .nav-left { 
+            display: flex;
+            align-items: center; 
+        }
+        nav .nav-logo-link { 
+            display: inline-flex; 
+            align-items: center;
+            margin-right: 1.5rem; 
+        }
+        nav .nav-logo { 
+            height: 56px; 
+            width: auto; 
+            max-width: 350px; 
+            object-fit: contain; 
+            display: block; 
+        }
+        nav .nav-phone { 
+            font-size: 0.95rem; 
+            color: #4A5568; 
+        }
+        nav .nav-phone i {
+            margin-right: 0.25rem; 
+            color: #00509E; 
+        }
+        nav a { 
+            font-size: 0.95rem; 
+            transition: color 0.3s ease; 
         }
         nav a:hover {
             color: #00509E;
         }
-        .firm-name-furigana {
-            font-size: 0.9rem; /* フリガナのフォントサイズ */
-            color: #e0e0e0; /* フリガナの色、ヘッダー背景とのコントラストを考慮 */
-            letter-spacing: 0.05em; /* 文字間隔を少し広げる */
-            display: block; /* ブロック要素にして改行 */
-            margin-top: 0.25rem; /* 事務所名との間隔 */
+        
+        .logo-origin-section { 
+            margin-bottom: 2.5rem; 
+            padding: 2rem;
+            background-color: #f9fafb; 
+            border-radius: 0.5rem;
+        }
+        .logo-origin-image {
+            width: 100px; 
+            height: auto;
+            margin-right: 2rem; 
+        }
+        .logo-origin-text h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #002244;
+            margin-bottom: 1rem;
+        }
+        .logo-origin-text p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #374151; 
+        }
+
+
+        /* スマートフォン向けのレスポンシブ調整 */
+        @media (max-width: 767px) { 
+            body {
+                font-size: 16px; 
+            }
+            .header-main-bg {
+                padding-top: 6rem; 
+                padding-bottom: 6rem;
+            }
+            .header-content h1 {
+                font-size: 2.25rem; 
+            }
+            .header-content .text-gray-200 {
+                font-size: 1.1rem; 
+            }
+            nav .nav-logo {
+                height: 40px; 
+                max-width: 200px; 
+            }
+            nav .nav-phone {
+                font-size: 0.8rem; 
+                margin-left: 0.75rem; 
+            }
+            nav .space-x-6 { 
+                space-x-0; 
+            }
+            nav .space-x-6 > * + * { 
+                 margin-left: 0.75rem; 
+            }
+             nav a { 
+                font-size: 0.8rem; 
+            }
+
+            .profile-img-placeholder, .profile-img-actual {
+                width: 140px; 
+                height: 140px;
+            }
+            .section-title {
+                font-size: 1.75rem; 
+            }
+            .feature-card-title {
+                font-size: 1.1rem;
+            }
+            .feature-card-description {
+                font-size: 0.85rem;
+            }
+            .service-card-title {
+                font-size: 1.05rem;
+            }
+            .service-card-description {
+                font-size: 0.85rem;
+            }
+            .logo-origin-section { 
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .logo-origin-image {
+                width: 80px; 
+                margin-right: 0;
+                margin-bottom: 1.5rem; 
+            }
+        }
+         @media (max-width: 480px) { 
+            nav .nav-left {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            nav .nav-phone {
+                margin-left: 0;
+                margin-top: 0.25rem; 
+            }
+            nav .space-x-6 { 
+                display: none; 
+            }
+             .header-content h1 {
+                font-size: 1.8rem; 
+            }
+            .header-content .text-gray-200 {
+                font-size: 1rem; 
+            }
+            .btn-cta, .btn-contact-form {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
+            }
+        }
+
+        /* 印刷用スタイル */
+        @media print {
+            body {
+                font-size: 12pt; 
+                color: #000000 !important; 
+                background-color: #ffffff !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img { 
+                display: none !important; 
+            }
+            .header-main-bg { 
+                background-image: none !important;
+                background-color: #ffffff !important;
+                padding-top: 2rem !important;
+                padding-bottom: 1rem !important; 
+                border-bottom: 1px solid #ccc; 
+            }
+            .header-content h1, 
+            .header-content .firm-name-furigana, 
+            .header-content .text-gray-200 { 
+                color: #000000 !important;
+                text-shadow: none !important;
+            }
+             .header-content .firm-name-furigana {
+                font-size: 0.9em; 
+            }
+            .header-content .text-gray-200 { 
+                display: none;
+            }
+
+
+            main {
+                margin: 0;
+                padding: 0;
+            }
+            
+            section {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+                page-break-inside: avoid; 
+            }
+            .logo-origin-section { 
+                background-color: #ffffff !important;
+                border: none !important;
+                padding: 1rem 0 !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .logo-origin-text h3, .logo-origin-text p {
+                color: #000000 !important;
+            }
+
+            .section-title {
+                color: #000000 !important;
+                font-size: 1.5rem !important; 
+                text-shadow: none !important;
+                margin-top: 2rem; 
+            }
+             .section-title:first-child { 
+                margin-top: 0;
+            }
+            .section-title::after {
+                background-color: #000000 !important; 
+            }
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #dddddd !important; 
+                page-break-inside: avoid;
+            }
+            .profile-img-actual, .service-icon, .feature-icon {
+                color: #000000 !important; 
+            }
+            .profile-img-actual {
+                 border-color: #000000 !important;
+            }
+             .text-primary-accent {
+                color: #000000 !important; 
+            }
+            .map-container {
+                display: none !important; 
+            }
+            #contact {
+                background-color: #ffffff !important; 
+            }
+            #contact .section-title.text-white, 
+            #contact .contact-description-text {
+                color: #000000 !important; 
+                text-shadow: none !important;
+            }
+            a { 
+                color: #000000 !important;
+                text-decoration: none !important; 
+            }
+            a[href^="http"]:after, a[href^="https"]:after { 
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+                color: #555;
+            }
+            
+            .header-main-bg {
+                transition: none !important;
+            }
         }
 
     </style>
 </head>
 <body class="bg-gray-50 text-gray-700 leading-relaxed">
 
-    <nav class="py-3">
+    <nav>
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-primary-dark">麻生税務会計事務所</a>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#representatives" class="text-gray-600 hover:text-primary-accent">代表者紹介</a>
-                <a href="#office-info" class="text-gray-600 hover:text-primary-accent">事務所概要</a>
-                <a href="#services" class="text-gray-600 hover:text-primary-accent">サービス内容</a>
-                <a href="#contact" class="text-gray-600 hover:text-primary-accent">お問い合わせ</a>
+            <div class="nav-left">
+                <a href="#" class="nav-logo-link">
+                    <img src="images/logo.png" alt="麻生税務会計事務所 ロゴ" class="nav-logo">
+                </a>
+                <span class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>059-378-4343
+                </span>
+            </div>
+            <div class="space-x-6 font-medium">
+                <a href="#consultants" class="nav-link hover:text-primary-accent">コンサルタント</a>
+                <a href="#features" class="nav-link hover:text-primary-accent">当事務所の特長</a>
+                <a href="#services" class="nav-link hover:text-primary-accent">サービス内容</a>
+                <a href="#office-info" class="nav-link hover:text-primary-accent">事務所概要</a>
+                <a href="#contact" class="nav-link hover:text-primary-accent">お問い合わせ</a>
             </div>
         </div>
     </nav>
 
-    <header class="header-main-bg text-white py-28 md:py-36">
+    <header class="header-main-bg text-white">
         <div class="header-content container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">麻生税務会計事務所</h1>
-            <span class="firm-name-furigana">あさおぜいむかいけいじむしょ</span>
-            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mt-4 mb-8">
+            <h1 class="mb-2">麻生税務会計事務所</h1>
+            <span class="firm-name-furigana">Asao tax accounting office</span>
+            <p class="max-w-2xl mx-auto mt-4 mb-8">
                 揺るぎない信頼と豊富な実績で、お客様の持続的な成長を誠実にサポートします。
             </p>
-            <a href="#contact" class="btn-cta px-8 py-3 text-base">
+            <a href="#contact" class="btn-cta px-8 py-3">
                 <i class="fas fa-phone-alt mr-2"></i> まずは無料相談へ
             </a>
         </div>
     </header>
 
     <main>
-        <section id="representatives" class="py-12 md:py-16 bg-white">
+        <section id="consultants" class="py-12 md:py-16 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">代表者紹介</h2>
+                <h2 class="section-title">コンサルタント</h2>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-10">
                     <div class="card p-6">
-                        <img src="images/麻生健治.jpg" alt="麻生健治氏 写真" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="profile-img-placeholder" style="display:none;"><span>健治氏 写真</span></div>
+                        <img src="images/asao-kenji.jpg" alt="麻生税務会計事務所 代表税理士 麻生健治" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display:none;"><span>代表税理士 麻生健治 写真</span></div>
                         <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 健治</h3>
-                        <p class="text-primary-accent font-medium mb-3 text-center">税理士</p>
-                        <div class="text-sm text-gray-600 space-y-2">
-                            <p class="font-medium">ご挨拶:</p>
-                            <p>お客様のビジネスの成長と安定を全力でサポートいたします。税務に関するあらゆるご相談に対応し、最適な解決策をご提案します。長年の経験と専門知識を活かし、信頼されるパートナーとして貢献してまいります。</p>
+                        <p class="text-primary-accent font-medium mb-3 text-center">税理士<br>ファイナンシャルプランナー2級</p>
+                        <div class="profile-text space-y-3">
+                            <p>法人税務だけでなく所得税や相続税、会社経営に関わる周辺知識にも精通し、総合的なアドバイスを強みとしている。会社経営における数多くの難題を解決してきた経験に加え、ダンス・書道・テニス等の多様な趣味を武器として、麻生税務会計事務所の代表を務める。</p>
+                            <div>
+                                <p><strong>略歴</strong></p>
+                                <ul>
+                                    <li>1986年 税理士試験 合格（登録番号：60657）</li>
+                                    <li>1989年 麻生税務会計事務所開業</li>
+                                    <li>2004年 現事務所を新築</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="card p-6">
-                        <img src="images/麻生高志.jpg" alt="麻生高志氏 写真" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="profile-img-placeholder" style="display:none;"><span>高志氏 写真</span></div>
+                        <img src="images/asao-takashi.jpg" alt="麻生税務会計事務所 公認会計士 麻生高志" class="profile-img-actual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display:none;"><span>公認会計士 麻生高志 写真</span></div>
                         <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 高志</h3>
-                        <p class="text-primary-accent font-medium mb-3 text-center">公認会計士・事業承継・M&Aエキスパート</p>
-                        <div class="text-sm text-gray-600 space-y-3">
-                            <p><strong>出身:</strong> 1984年 三重県鈴鹿市生まれ</p>
+                        <p class="text-primary-accent font-medium mb-3 text-center">公認会計士<br>事業承継・M&Aエキスパート</p>
+                        <div class="profile-text space-y-3">
+                            <p>大手監査法人の有限責任あずさ監査法人にて、製造業・不動産業・建設業等の多様な業種の上場会社の会計監査業務を経験。<br>
+                            中堅税理士法人を経た後、株式会社青山トラスト会計社にて事業承継型M&Aを中心とした財務デューデリジェンス業務に従事。多様な業種のM&A案件にプロジェクトマネージャーとして関与した。<br>
+                            上場会社で学んだ経営管理の視点と、財務デューデリジェンスで培ったコンサルティング能力を武器に、2022年から麻生税務会計事務所に参画。</p>
                             <div>
-                                <p><strong>学歴:</strong></p>
-                                <ul class="list-none ml-1 space-y-0.5">
-                                    <li>2003年 鈴鹿中学高等学校 卒業</li>
+                                <p><strong>略歴</strong></p>
+                                <ul>
+                                    <li>2003年 私立鈴鹿中学高等学校 卒業</li>
+                                    <li>2006年 公認会計士試験 合格（登録番号：26010）</li>
                                     <li>2007年 一橋大学商学部 卒業</li>
                                 </ul>
-                            </div>
-                            <div>
-                                <p><strong>主な職務経歴:</strong></p>
-                                <ul class="list-none ml-1 space-y-1">
-                                    <li>2006年 公認会計士試験 合格</li>
-                                    <li>2007年 あずさ監査法人 入社</li>
-                                    <li>2013年 税理士法人平成会計社 入社</li>
-                                    <li>2015年 株式会社青山トラスト会計社 入社</li>
-                                    <li>2022年 麻生税務会計事務所 勤務</li> </ul>
                             </div>
                         </div>
                     </div>
@@ -228,22 +576,29 @@
             </div>
         </section>
 
-        <section id="office-info" class="py-12 md:py-16 bg-gray-100">
+        <section id="features" class="py-12 md:py-16 bg-gray-100">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">事務所概要</h2>
-                <div class="grid md:grid-cols-5 gap-8 md:gap-10 items-center">
-                    <div class="md:col-span-2 card p-6">
-                        <h3 class="text-lg font-semibold text-primary-dark mb-4">事務所情報</h3>
-                        <div class="space-y-3 text-sm text-gray-600">
-                            <p><strong class="w-24 inline-block"><i class="fas fa-map-marker-alt mr-2 text-primary-accent"></i>所在地:</strong> 〒513-0806<br class="sm:hidden"><span class="ml-28 sm:ml-0"></span>三重県鈴鹿市算所5-24-22</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-phone-alt mr-2 text-primary-accent"></i>電話番号:</strong> 059-378-4343</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-fax mr-2 text-primary-accent"></i>FAX:</strong> 059-378-8684</p>
+                <h2 class="section-title">当事務所の特長</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card text-center">
+                        <div class="card-content">
+                            <i class="fas fa-users-cog feature-icon"></i>
+                            <h3 class="feature-card-title">柔軟な対応</h3>
+                            <p class="feature-card-description">個人事務所ならではのフットワークの軽さを活かし、お客様一人ひとりの状況やニーズに合わせた、きめ細やかで柔軟なサービス提供を心がけております。</p>
                         </div>
                     </div>
-                    <div class="md:col-span-3 card p-4">
-                        <h3 class="text-lg font-semibold text-primary-dark mb-3 text-center">アクセスマップ</h3>
-                        <div class="map-container">
-                             <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E9%88%B4%E9%B9%BF%E5%B8%82%E7%AE%97%E6%89%805-24-22&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="card text-center">
+                        <div class="card-content">
+                            <i class="fas fa-comments feature-icon"></i>
+                            <h3 class="feature-card-title">親身なヒアリング</h3>
+                            <p class="feature-card-description">お客様のお話をじっくりと伺うことを第一に考えています。どんな些細なことでもお気軽にご相談いただける、話しやすい雰囲気づくりを大切にしています。</p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-content">
+                            <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                            <h3 class="feature-card-title">的確な説明</h3>
+                            <p class="feature-card-description">専門用語を避け、分かりやすい言葉で丁寧にご説明いたします。お客様にご納得いただいた上で最適な解決策を共に考え、実行してまいります。</p>
                         </div>
                     </div>
                 </div>
@@ -254,35 +609,80 @@
             <div class="container mx-auto px-6">
                 <h2 class="section-title">サービス内容</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <div class="card p-6 text-center">
-                        <i class="fas fa-calculator service-icon"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">税務申告（法人・個人）</h3>
-                        <p class="text-xs text-gray-500">最新の税法に基づき、法人税・所得税・消費税等の各種申告を正確に行います。</p>
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-calculator service-icon"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">税務申告（法人・個人）</h3>
+                            <p class="service-card-description">法人税、所得税、消費税をはじめとする各種税務申告書の作成・提出を正確かつ丁寧に行います。月次決算から年次決算、節税対策まで、お客様の状況に合わせた最適な税務コンプライアンスをサポートします。</p>
+                        </div>
                     </div>
-                    <div class="card p-6 text-center">
-                        <i class="fas fa-handshake service-icon"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">M&A・事業承継支援</h3>
-                        <p class="text-xs text-gray-500">M&A戦略策定、デューデリジェンス、事業承継計画の立案・実行まで総合的にサポートします。</p>
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-handshake service-icon"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">M&A・事業承継支援</h3>
+                            <p class="service-card-description">後継者不在でお悩みの経営者様には、M&Aを活用した事業承継について分かりやすくご説明し、最適な選択肢をご提案します。また、M&Aによる事業譲受をご検討中の企業様には、精密な財務デューデリジェンスを通じて、リスクの洗い出しと成功に向けた的確なアドバイスを提供いたします。</p>
+                        </div>
                     </div>
-                    <div class="card p-6 text-center">
-                        <i class="fas fa-users service-icon"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">相続対策・相続税申告</h3>
-                        <p class="text-xs text-gray-500">円満な資産承継のための生前対策から、複雑な相続税申告まで専門家が丁寧に対応します。</p>
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-users service-icon"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">相続対策・相続税申告</h3>
+                            <p class="service-card-description">大切な資産を次世代へ円満に承継するための生前対策から、複雑な相続税評価・申告業務まで、経験豊富な専門家が親身に対応し、最適なプランをご提案します。</p>
+                        </div>
                     </div>
-                    <div class="card p-6 text-center">
-                        <i class="fas fa-chart-pie service-icon"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">経営管理の導入支援</h3>
-                        <p class="text-xs text-gray-500">予算管理や資金繰り管理体制の構築を支援し、企業の持続的成長をサポートします。</p>
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-chart-pie service-icon"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">経営管理の導入支援</h3>
+                            <p class="service-card-description">企業の現状分析に基づき、予算管理制度の設計・導入、資金繰り計画の策定、業績評価指標（KPI）の設定など、経営の「見える化」と意思決定の迅速化をサポートし、持続的な成長基盤を構築します。</p>
+                        </div>
                     </div>
-                    <div class="card p-6 text-center">
-                        <i class="fas fa-lightbulb service-icon"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">経営効率化サポート</h3>
-                        <p class="text-xs text-gray-500">業務プロセスの見直しやIT活用を通じ、お客様の経営効率化をお手伝いします。</p>
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-lightbulb service-icon"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">業務効率化サポート</h3>
+                            <p class="service-card-description">バックオフィス業務のプロセス見直し、会計システムの導入・クラウド化支援など、お客様の業務負担を軽減し、生産性向上とコスト削減に貢献します。</p>
+                        </div>
                     </div>
-                     <div class="card p-6 text-center bg-gray-50">
-                        <i class="fas fa-info-circle service-icon text-primary-accent"></i>
-                        <h3 class="text-lg font-semibold text-primary-dark mb-2">その他経営相談</h3>
-                        <p class="text-xs text-gray-500">上記以外の経営に関するお悩みも、お気軽にご相談ください。</p>
+                     <div class="card">
+                        <div class="card-content text-center bg-gray-50">
+                            <i class="fas fa-info-circle service-icon text-primary-accent"></i>
+                            <h3 class="service-card-title font-semibold text-primary-dark mb-2">その他経営相談</h3>
+                            <p class="service-card-description">資金調達支援、創業支援など、上記以外の経営に関する様々なお悩みや課題に対しても、幅広くご相談に応じています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="office-info" class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">事務所概要</h2>
+                <div class="logo-origin-section flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+                    <img src="images/logo-mark.png" alt="麻生税務会計事務所 ロゴマーク" class="logo-origin-image">
+                    <div class="logo-origin-text">
+                        <h3>ロゴに込めた想い</h3>
+                        <p>当事務所のロゴは、3本の矢をモチーフとしています。<br>
+                        これは、お客様（You）の「Y」、麻生健治（Kenji）の「K」、そして麻生高志（Takashi）の「T」を組み合わせた形を表現しています。<br>
+                        私たちはお客様と一体となり、三者が力を合わせることで、いかなる経営課題にも果敢に取り組み、必ず克服するという強い意志を象徴しています。</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-primary-dark mb-4">事務所情報</h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <p><strong class="w-24 inline-block"><i class="fas fa-building mr-2 text-primary-accent"></i>事務所名:</strong> 麻生税務会計事務所</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-user mr-2 text-primary-accent"></i>代表者:</strong> 麻生 健治</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-map-marker-alt mr-2 text-primary-accent"></i>所在地:</strong> 〒513-0806 <br class="sm:hidden"><span class="ml-28 sm:ml-0"></span>三重県鈴鹿市算所5-24-22</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-phone-alt mr-2 text-primary-accent"></i>電話番号:</strong> 059-378-4343</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-fax mr-2 text-primary-accent"></i>FAX:</strong> 059-378-8684</p>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold text-primary-dark mb-3 text-center">アクセスマップ</h3>
+                        <div class="map-container">
+                             <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E9%88%B4%E9%B9%BF%E5%B8%82%E7%AE%97%E6%89%805-24-22&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -291,25 +691,17 @@
         <section id="contact" class="py-16 md:py-20 bg-primary-dark">
             <div class="header-content container mx-auto px-6 text-center">
                 <h2 class="section-title text-white">お問い合わせ</h2>
-                <p class="text-base text-gray-300 mb-8 max-w-xl mx-auto">
+                <p class="text-base text-gray-100 mb-8 max-w-xl mx-auto contact-description-text">
                     税務・会計、経営に関するご相談は、下記フォームよりお気軽にお寄せください。
                     担当者が確認後、迅速にご連絡いたします。
                 </p>
-                <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" class="btn-cta bg-white text-primary-dark hover:bg-gray-200 px-8 py-3 text-base">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgnMTh07pt6NvghXF_ybRpEV4w3IDDblKkZY3er71OBt6f4A/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="btn-contact-form text-base">
                     <i class="fas fa-envelope mr-2"></i> お問い合わせフォームへ
                 </a>
-                <p class="text-xs text-gray-400 mt-4">（Googleフォームが新しいタブで開きます）</p>
-                <div class="mt-8 text-gray-300">
-                    <p class="font-medium text-sm">お問い合わせフォーム入力項目 (例):</p>
-                    <ul class="list-disc list-inside inline-block text-left mt-1 text-xs">
-                        <li>会社名・屋号</li>
-                        <li>ご担当者様氏名</li>
-                        <li>連絡先（電話番号、メールアドレス）</li>
-                        <li>ご希望の面談日時（あれば）</li>
-                        <li>ご相談内容の概要</li>
-                    </ul>
+                <p class="text-xs text-gray-200 mt-4 contact-description-text">
+                    （Googleフォームが新しいタブで開きます）
+                </p>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -320,6 +712,40 @@
     </footer>
 
     <script>
+        // ヘッダー背景画像のスライドショースクリプト
+        window.addEventListener('DOMContentLoaded', () => {
+            const headerElement = document.querySelector('.header-main-bg');
+            if (headerElement) {
+                const imageUrls = [
+                    'images/header1.JPG', 
+                    'images/header2.jpg', 
+                    'images/header3.jpg'  
+                ];
+                
+                if (imageUrls.length > 0) {
+                    headerElement.style.backgroundImage = `url('${imageUrls[0]}')`;
+                }
+
+                let currentImageIndex = 0;
+                const FADE_DURATION = 500; 
+                const SLIDE_INTERVAL = 5000; 
+
+                const changeImage = () => {
+                    headerElement.style.opacity = '0'; 
+
+                    setTimeout(() => {
+                        currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+                        headerElement.style.backgroundImage = `url('${imageUrls[currentImageIndex]}')`;
+                        headerElement.style.opacity = '1'; 
+                    }, FADE_DURATION);
+                };
+
+                if (imageUrls.length > 1) { 
+                    setInterval(changeImage, SLIDE_INTERVAL);
+                }
+            }
+        });
+
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
