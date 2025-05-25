@@ -358,38 +358,33 @@
         }
 
         footer {
-            background-color: #2d3748; 
-            color: #e2e8f0; 
+            background-color: #002244; /* プライマリダークカラーに変更 */
+            color: #cbd5e0; /* text-gray-300 相当 */
             padding-top: 2.5rem; 
             padding-bottom: 2.5rem;
         }
-        footer .footer-content {
-            display: grid;
-            grid-template-columns: 1fr; /* 常に1カラムに */
-            gap: 1.5rem; 
-            text-align: center; 
-        }
-        footer h3 { /* 事務所名表示用 */
-            font-size: 1.1rem;
+        footer .footer-firm-name {
+            font-size: 1.25rem; /* 少し大きめ */
             font-weight: 600;
             color: #ffffff;
-            margin-bottom: 0.5rem; /* 住所との間隔を少し詰める */
+            margin-bottom: 0.75rem;
         }
-        footer p { 
+        footer .footer-address p {
             font-size: 0.875rem; 
-            margin-bottom: 0.25rem; /* 各行の間隔を少し詰める */
+            margin-bottom: 0.25rem;
+            line-height: 1.6;
         }
-        footer a {
-            color: #a0aec0; 
-            transition: color 0.3s ease;
+        footer .footer-address a {
+            color: #90cdf4; /* text-blue-300 相当 */
+            text-decoration: underline;
         }
-        footer a:hover {
+        footer .footer-address a:hover {
             color: #ffffff;
         }
         footer .footer-bottom {
             margin-top: 2rem; 
             padding-top: 1.5rem;
-            border-top: 1px solid #4a5568; 
+            border-top: 1px solid #4a5568; /* 少し明るい区切り線 */
             font-size: 0.8rem;
             text-align: center;
             color: #a0aec0; 
@@ -457,6 +452,9 @@
                 width: 80px; 
                 margin-right: 0;
                 margin-bottom: 1.5rem; 
+            }
+            footer .footer-content { /* スマホではフッターも中央揃え */
+                text-align: center;
             }
         }
          @media (max-width: 480px) { 
@@ -637,7 +635,7 @@
                         <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 健治</h3>
                         <p class="text-primary-accent font-medium mb-3 text-center">税理士<br>ファイナンシャルプランナー2級</p>
                         <div class="profile-text space-y-3">
-                            <p>長年の経験と幅広い知識を活かし、法人税務だけでなく所得税や相続税、会社経営に関わる周辺知識にも精通。総合的なアドバイスを強みとし、特に建設業・飲食業・運輸業・サービス業など、多岐にわたる業種の顧問業務を数多くこなしてきました。お客様のビジネスの成長と安定を全力でサポートし、麻生税務会計事務所の代表として、皆様からの信頼を第一に業務に取り組んでいます。趣味はテニス、ダンス、ピアノ、書道です。</p>
+                            <p>長年の経験と幅広い知識を活かし、法人税務だけでなく所得税や相続税、会社経営に関わる周辺知識にも精通。総合的なアドバイスを強みとし、特に建設業・飲食業・運輸業・サービス業など、多岐にわたる業種の顧問業務を数多くこなしてきました。お客様のビジネスの成長と安定を全力でサポートし、麻生税務会計事務所の代表として、皆様からの信頼を第一に業務に取り組んでいます。多様な趣味（テニス、ダンス、ピアノ、書道）を通じて培われた幅広い人間関係も大切にしています。</p>
                             <div>
                                 <p><strong>略歴</strong></p>
                                 <ul>
@@ -807,12 +805,14 @@
         <div class="container mx-auto px-6">
             <div class="footer-content">
                 <div>
-                    <h3>麻生税務会計事務所</h3>
-                    <p>〒513-0806<br>三重県鈴鹿市算所5-24-22</p>
-                    <p>電話: <a href="tel:059-378-4343">059-378-4343</a></p>
-                    <p>FAX: 059-378-8684</p>
+                    <h3 class="footer-firm-name">麻生税務会計事務所</h3>
+                    <div class="footer-address">
+                        <p>〒513-0806<br>三重県鈴鹿市算所5-24-22</p>
+                        <p>電話: <a href="tel:059-378-4343" class="hover:text-white">059-378-4343</a></p>
+                        <p>FAX: 059-378-8684</p>
+                    </div>
                 </div>
-                </div>
+            </div>
             <div class="footer-bottom">
                 © <span id="currentYearFooter"></span> 麻生税務会計事務所. All Rights Reserved.
             </div>
