@@ -240,6 +240,19 @@
         .profile-text ul li {
             margin-bottom: 0.3rem;
         }
+        .profile-text .hobbies { /* 趣味のリスト用 */
+            margin-top: 0.5rem;
+        }
+        .profile-text .hobbies span {
+            display: inline-block;
+            margin-right: 0.5rem;
+            background-color: #e0f2fe; /* 薄い水色 */
+            color: #00509E; /* アクセントカラー */
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
 
 
         .feature-icon { 
@@ -358,33 +371,40 @@
         }
 
         footer {
-            background-color: #002244; /* プライマリダークカラーに変更 */
-            color: #cbd5e0; /* text-gray-300 相当 */
+            background-color: #002244; 
+            color: #cbd5e0; 
             padding-top: 2.5rem; 
             padding-bottom: 2.5rem;
         }
-        footer .footer-firm-name {
-            font-size: 1.25rem; /* 少し大きめ */
+        footer .footer-content {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            gap: 0.5rem; 
+        }
+        footer h3 { 
+            font-size: 1.1rem;
             font-weight: 600;
             color: #ffffff;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem; 
         }
-        footer .footer-address p {
+        footer p { 
             font-size: 0.875rem; 
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.25rem; 
             line-height: 1.6;
         }
-        footer .footer-address a {
-            color: #90cdf4; /* text-blue-300 相当 */
+        footer a {
+            color: #90cdf4; 
             text-decoration: underline;
         }
-        footer .footer-address a:hover {
+        footer a:hover {
             color: #ffffff;
         }
         footer .footer-bottom {
             margin-top: 2rem; 
             padding-top: 1.5rem;
-            border-top: 1px solid #4a5568; /* 少し明るい区切り線 */
+            border-top: 1px solid #4a5568; 
             font-size: 0.8rem;
             text-align: center;
             color: #a0aec0; 
@@ -452,9 +472,6 @@
                 width: 80px; 
                 margin-right: 0;
                 margin-bottom: 1.5rem; 
-            }
-            footer .footer-content { /* スマホではフッターも中央揃え */
-                text-align: center;
             }
         }
          @media (max-width: 480px) { 
@@ -635,7 +652,8 @@
                         <h3 class="text-xl font-semibold text-primary-dark mb-1 text-center">麻生 健治</h3>
                         <p class="text-primary-accent font-medium mb-3 text-center">税理士<br>ファイナンシャルプランナー2級</p>
                         <div class="profile-text space-y-3">
-                            <p>長年の経験と幅広い知識を活かし、法人税務だけでなく所得税や相続税、会社経営に関わる周辺知識にも精通。総合的なアドバイスを強みとし、特に建設業・飲食業・運輸業・サービス業など、多岐にわたる業種の顧問業務を数多くこなしてきました。お客様のビジネスの成長と安定を全力でサポートし、麻生税務会計事務所の代表として、皆様からの信頼を第一に業務に取り組んでいます。多様な趣味（テニス、ダンス、ピアノ、書道）を通じて培われた幅広い人間関係も大切にしています。</p>
+                            <p>長年の税務実務経験を基に、法人税務から個人の所得税、相続税に至るまで、幅広い知識でお客様をサポートします。特に建設業、飲食業、運輸業、サービス業など、多岐にわたる業種の顧問業務で培った深い洞察力と、会社経営の様々な課題を解決してきた実績が強みです。お客様一人ひとりに寄り添い、総合的な視点から最適なアドバイスを提供することで、ビジネスの成長と安定に貢献します。<br>
+                            趣味は、テニス・ダンス・ピアノ・書道と多岐にわたり、これらの活動を通じて培われた幅広い人間関係も大切にしています。</p>
                             <div>
                                 <p><strong>略歴</strong></p>
                                 <ul>
