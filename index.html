@@ -274,7 +274,7 @@
             line-height: 1.5rem; 
             color: #4A5568; 
         }
-
+        
         .map-container {
             position: relative;
             overflow: hidden;
@@ -355,6 +355,38 @@
             font-size: 0.95rem;
             line-height: 1.7;
             color: #374151; 
+        }
+
+        .batonz-promo {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .batonz-promo-logo {
+            height: 28px;
+            width: auto;
+        }
+        .batonz-promo-text {
+            font-size: 0.9rem;
+            color: #4A5568;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .batonz-promo-text {
+                text-align: left;
+            }
+        }
+        .batonz-promo-text a {
+            color: #00509E;
+            font-weight: 600;
+            text-decoration: underline;
         }
 
         footer {
@@ -460,6 +492,15 @@
                 margin-right: 0;
                 margin-bottom: 1.5rem; 
             }
+            .batonz-promo {
+                padding: 1rem;
+            }
+            .batonz-promo-logo {
+                height: 24px;
+            }
+            .batonz-promo-text {
+                font-size: 0.9rem;
+            }
         }
          @media (max-width: 480px) { 
             nav .nav-left {
@@ -494,7 +535,7 @@
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
-            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img { 
+            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo { 
                 display: none !important; 
             }
             .header-main-bg { 
@@ -755,6 +796,13 @@
         <section id="office-info" class="py-12 md:py-16 bg-gray-100">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">事務所概要</h2>
+                <div class="batonz-promo">
+                    <img src="images/batonz_logo.png" alt="BATONZ ロゴ" class="batonz-promo-logo">
+                    <p class="batonz-promo-text">
+                        当事務所はM&A総合支援プラットフォーム「BATONZ」の支援専門家です。<br>
+                        <a href="https://batonz.jp/adviser/experts/9354" target="_blank" rel="noopener noreferrer">» 専門家紹介ページはこちら</a>
+                    </p>
+                </div>
                 <div class="logo-origin-section flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
                     <img src="images/logo-mark.png" alt="麻生税務会計事務所 ロゴマーク" class="logo-origin-image">
                     <div class="logo-origin-text">
@@ -805,21 +853,9 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-gray-800 text-white py-8 text-center">
         <div class="container mx-auto px-6">
-            <div class="footer-content">
-                <div>
-                    <h3 class="footer-firm-name">麻生税務会計事務所</h3>
-                    <div class="footer-address">
-                        <p>〒513-0806<br>三重県鈴鹿市算所5-24-22</p>
-                        <p>電話: <a href="tel:059-378-4343" class="hover:text-white">059-378-4343</a></p>
-                        <p>FAX: 059-378-8684</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © <span id="currentYearFooter"></span> 麻生税務会計事務所. All Rights Reserved.
-            </div>
+            <p class="text-xs">© <span id="currentYearFooter"></span> 麻生税務会計事務所. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -829,7 +865,7 @@
             const headerElement = document.querySelector('.header-main-bg');
             if (headerElement) {
                 const imageUrls = [
-                    'images/header1.jpg', 
+                    'images/header1.JPG', 
                     'images/header2.jpg', 
                     'images/header3.jpg'  
                 ];
