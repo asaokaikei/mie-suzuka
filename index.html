@@ -389,6 +389,33 @@
             text-decoration: underline;
         }
 
+        .guideline-declaration {
+             padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #e5e7eb; /* bg-gray-200 */
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .guideline-declaration h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #002244;
+            margin-bottom: 0.75rem;
+        }
+        .guideline-declaration p {
+            font-size: 0.9rem;
+            color: #4A5568;
+            margin-bottom: 1rem;
+        }
+        .guideline-declaration a {
+            color: #00509E;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .guideline-declaration a:hover {
+            color: #003D7A;
+        }
+
         footer {
             background-color: #002244; 
             color: #cbd5e0; 
@@ -535,7 +562,7 @@
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
-            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo { 
+            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo, .guideline-declaration { 
                 display: none !important; 
             }
             .header-main-bg { 
@@ -796,6 +823,11 @@
         <section id="office-info" class="py-12 md:py-16 bg-gray-100">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">事務所概要</h2>
+                <div class="guideline-declaration">
+                    <h3>中小M&Aガイドライン遵守の宣言</h3>
+                    <p>当事務所は、中小企業庁が定める「中小M&Aガイドライン（第3版）」を遵守し、お客様に質の高いM&A支援を提供することをお約束します。</p>
+                    <a href="pdf/SME_M&A_Guidelines_(3rd_Edition).pdf" target="_blank" rel="noopener noreferrer">» 遵守宣言の詳細はこちら (PDF)</a>
+                </div>
                 <div class="batonz-promo">
                     <img src="images/batonz_logo.png" alt="BATONZ ロゴ" class="batonz-promo-logo">
                     <p class="batonz-promo-text">
@@ -865,7 +897,7 @@
             const headerElement = document.querySelector('.header-main-bg');
             if (headerElement) {
                 const imageUrls = [
-                    'images/header1.jpg', 
+                    'images/header1.JPG', 
                     'images/header2.jpg', 
                     'images/header3.jpg'  
                 ];
