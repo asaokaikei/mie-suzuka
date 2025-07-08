@@ -78,7 +78,7 @@
         .hover-bg-primary-accent:hover { background-color: #003D7A; }
 
         .header-main-bg {
-            /* background-image はJavaScriptで設定 */
+            background-color: #002244; /* フェード時の背景色を指定 */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -669,9 +669,9 @@
                 <a href="#" class="nav-logo-link">
                     <img src="images/logo.png" alt="麻生税務会計事務所 ロゴ" class="nav-logo">
                 </a>
-                <span class="nav-phone">
+                <a href="tel:059-378-4343" class="nav-phone">
                     <i class="fas fa-phone-alt"></i>059-378-4343
-                </span>
+                </a>
             </div>
             <div class="space-x-6 font-medium">
                 <a href="#consultants" class="nav-link hover:text-primary-accent">コンサルタント</a>
@@ -897,7 +897,7 @@
             const headerElement = document.querySelector('.header-main-bg');
             if (headerElement) {
                 const imageUrls = [
-                    'images/header1.jpg', 
+                    'images/header1.JPG', 
                     'images/header2.jpg', 
                     'images/header3.jpg'  
                 ];
