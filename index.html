@@ -299,8 +299,6 @@
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            padding-top: 0.75rem; 
-            padding-bottom: 0.75rem; 
         }
         nav .nav-left { 
             display: flex;
@@ -413,6 +411,36 @@
             text-decoration: underline;
         }
         .guideline-declaration a:hover {
+            color: #003D7A;
+        }
+        
+        .media-feature-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 48rem; /* lg */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .media-feature-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #002244;
+            margin-bottom: 1rem;
+        }
+        .media-feature-box p {
+            font-size: 1rem;
+            color: #4A5568;
+            margin-bottom: 1.5rem;
+        }
+        .media-feature-box a {
+            color: #00509E;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .media-feature-box a:hover {
             color: #003D7A;
         }
 
@@ -538,9 +566,6 @@
                 margin-left: 0;
                 margin-top: 0.25rem; 
             }
-            nav .space-x-6 { 
-                display: none; 
-            }
              .header-content h1 {
                 font-size: 1.8rem; 
             }
@@ -562,7 +587,7 @@
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
-            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo, .guideline-declaration { 
+            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo, .guideline-declaration, .media-feature-box { 
                 display: none !important; 
             }
             .header-main-bg { 
@@ -660,9 +685,9 @@
 </head>
 <body class="bg-gray-50 text-gray-700 leading-relaxed">
 
-    <nav>
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-filter backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="nav-left">
+            <div class="nav-left py-2">
                 <a href="#" class="nav-logo-link">
                     <img src="images/logo.png" alt="麻生税務会計事務所 ロゴ" class="nav-logo">
                 </a>
@@ -670,13 +695,38 @@
                     <i class="fas fa-phone-alt"></i>059-378-4343
                 </a>
             </div>
-            <div class="space-x-6 font-medium">
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 font-medium">
                 <a href="#consultants" class="nav-link hover:text-primary-accent">コンサルタント</a>
                 <a href="#features" class="nav-link hover:text-primary-accent">当事務所の特長</a>
                 <a href="#services" class="nav-link hover:text-primary-accent">サービス内容</a>
+                <a href="#media" class="nav-link hover:text-primary-accent">メディア掲載</a>
                 <a href="#office-info" class="nav-link hover:text-primary-accent">事務所概要</a>
                 <a href="faq.html" class="nav-link hover:text-primary-accent">よくあるご質問</a>
                 <a href="#contact" class="nav-link hover:text-primary-accent">お問い合わせ</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="hamburger-button" class="p-2 -mr-2">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#consultants" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">コンサルタント</a>
+                <a href="#features" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">当事務所の特長</a>
+                <a href="#services" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">サービス内容</a>
+                <a href="#media" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">メディア掲載</a>
+                <a href="#office-info" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">事務所概要</a>
+                <a href="faq.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">よくあるご質問</a>
+                <a href="#contact" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">お問い合わせ</a>
             </div>
         </div>
     </nav>
@@ -818,7 +868,22 @@
             </div>
         </section>
 
-        <section id="office-info" class="py-12 md:py-16 bg-gray-100">
+        <section id="media" class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">メディア掲載</h2>
+                <div class="media-feature-box">
+                    <h3>PR TIMESに掲載されました</h3>
+                    <p>
+                        当事務所が、M&A総合支援プラットフォーム「BATONZ」の新たな支援専門家として、Webメディア「PR TIMES」に掲載されました。
+                    </p>
+                    <a href="https://prtimes.jp/main/html/rd/p/000000374.000034376.html" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline">
+                        » 掲載記事はこちら <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="office-info" class="py-12 md:py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">事務所概要</h2>
                 <div class="guideline-declaration">
@@ -934,6 +999,24 @@
                 currentYearElement.textContent = new Date().getFullYear();
              }
         }
+
+        // Hamburger menu toggle
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!link.href.includes('faq.html')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
     </script>
 </body>
 </html>
