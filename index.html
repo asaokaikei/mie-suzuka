@@ -354,65 +354,6 @@
             line-height: 1.7;
             color: #374151; 
         }
-
-        .batonz-promo {
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .batonz-promo-logo {
-            height: 28px;
-            width: auto;
-        }
-        .batonz-promo-text {
-            font-size: 0.9rem;
-            color: #4A5568;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .batonz-promo-text {
-                text-align: left;
-            }
-        }
-        .batonz-promo-text a {
-            color: #00509E;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .guideline-declaration {
-             padding: 1.5rem;
-            border-radius: 0.5rem;
-            background-color: #e5e7eb; /* bg-gray-200 */
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-        .guideline-declaration h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #002244;
-            margin-bottom: 0.75rem;
-        }
-        .guideline-declaration p {
-            font-size: 0.9rem;
-            color: #4A5568;
-            margin-bottom: 1rem;
-        }
-        .guideline-declaration a {
-            color: #00509E;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-        .guideline-declaration a:hover {
-            color: #003D7A;
-        }
         
         .media-feature-box {
             background-color: white;
@@ -442,6 +383,109 @@
         }
         .media-feature-box a:hover {
             color: #003D7A;
+        }
+        .news-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+        .news-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #002244;
+            margin-bottom: 1rem;
+        }
+        .news-box p {
+            font-size: 1rem;
+            color: #4A5568;
+            margin-bottom: 1.5rem;
+        }
+        .news-box a {
+            color: #00509E;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .news-box a:hover {
+            color: #003D7A;
+        }
+        
+        .info-and-map-container {
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .info-and-map-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .ma-support-card {
+            background-color: #f9fafb; /* 薄いグレーの背景色 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* 影を内側に変更 */
+        }
+        .ma-support-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #002244;
+            margin-bottom: 0.75rem;
+        }
+        .ma-support-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4A5568;
+            margin-bottom: 1rem;
+        }
+        .ma-support-card .link-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start; /* 左寄せに変更 */
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .ma-support-card .batonz-logo-small {
+            height: 20px;
+            width: auto;
+            margin: 0; /* 左寄せにするためマージンを調整 */
+        }
+
+        /* 事務所情報のフォントサイズ調整 */
+        .office-info-text-large {
+            font-size: 1.1rem; /* 事務所情報を見やすく、大きめに */
+            line-height: 1.6;
+        }
+        .office-info-text-large strong {
+            font-size: 1rem; /* 項目名もバランス良く */
+        }
+        
+        .ma-support-integrated p {
+             font-size: 1rem;
+             line-height: 1.7;
+        }
+        
+        /* 事務所情報内の項目と値の配置を調整 */
+        .office-info-item {
+            display: flex;
+            align-items: center;
+        }
+        .office-info-label {
+            width: 24rem; /* 幅を固定して揃える */
+            min-width: 100px;
         }
 
         footer {
@@ -547,14 +591,8 @@
                 margin-right: 0;
                 margin-bottom: 1.5rem; 
             }
-            .batonz-promo {
-                padding: 1rem;
-            }
-            .batonz-promo-logo {
-                height: 24px;
-            }
-            .batonz-promo-text {
-                font-size: 0.9rem;
+            .ma-support-card .link-group {
+                justify-content: center;
             }
         }
          @media (max-width: 480px) { 
@@ -587,7 +625,7 @@
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
-            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .batonz-promo, .guideline-declaration, .media-feature-box { 
+            nav, footer, .btn-cta, .btn-contact-form, #contact .text-xs, .header-main-bg::before, .logo-origin-section img, .ma-support-card, .news-box, .media-feature-box { 
                 display: none !important; 
             }
             .header-main-bg { 
@@ -701,7 +739,7 @@
                 <a href="#consultants" class="nav-link hover:text-primary-accent">コンサルタント</a>
                 <a href="#features" class="nav-link hover:text-primary-accent">当事務所の特長</a>
                 <a href="#services" class="nav-link hover:text-primary-accent">サービス内容</a>
-                <a href="#media" class="nav-link hover:text-primary-accent">メディア掲載</a>
+                <a href="#news" class="nav-link hover:text-primary-accent">新着情報</a>
                 <a href="#office-info" class="nav-link hover:text-primary-accent">事務所概要</a>
                 <a href="faq.html" class="nav-link hover:text-primary-accent">よくあるご質問</a>
                 <a href="#contact" class="nav-link hover:text-primary-accent">お問い合わせ</a>
@@ -723,7 +761,7 @@
                 <a href="#consultants" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">コンサルタント</a>
                 <a href="#features" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">当事務所の特長</a>
                 <a href="#services" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">サービス内容</a>
-                <a href="#media" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">メディア掲載</a>
+                <a href="#news" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">新着情報</a>
                 <a href="#office-info" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">事務所概要</a>
                 <a href="faq.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">よくあるご質問</a>
                 <a href="#contact" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">お問い合わせ</a>
@@ -868,17 +906,28 @@
             </div>
         </section>
 
-        <section id="media" class="py-12 md:py-16 bg-gray-100">
+        <section id="news" class="py-12 md:py-16 bg-gray-100">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">メディア掲載</h2>
+                <h2 class="section-title">新着情報</h2>
+                <div class="news-box">
+                    <h3>M&A支援機関に登録されました</h3>
+                    <p>
+                        当事務所は、2025年8月20日付けで中小企業庁が定める「中小M&Aガイドライン（第3版）」を遵守し、公正なM&A支援を実施するM&A支援機関に登録されました。
+                        <br>
+                        <a href="https://www.chusho.meti.go.jp/zaimu/shoukei/2025/250820m_and_a.html" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline">
+                            » 掲載記事はこちら <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
+                    </p>
+                </div>
                 <div class="media-feature-box">
                     <h3>PR TIMESに掲載されました</h3>
                     <p>
                         当事務所が、M&A総合支援プラットフォーム「BATONZ」の新たな支援専門家として、Webメディア「PR TIMES」に掲載されました。
+                        <br>
+                        <a href="https://prtimes.jp/main/html/rd/p/000000374.000034376.html" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline">
+                            » 掲載記事はこちら <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
                     </p>
-                    <a href="https://prtimes.jp/main/html/rd/p/000000374.000034376.html" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline">
-                        » 掲載記事はこちら <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                    </a>
                 </div>
             </div>
         </section>
@@ -886,18 +935,7 @@
         <section id="office-info" class="py-12 md:py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">事務所概要</h2>
-                <div class="guideline-declaration">
-                    <h3>中小M&Aガイドライン遵守の宣言</h3>
-                    <p>当事務所は、中小企業庁が定める「中小M&Aガイドライン（第3版）」を遵守し、お客様に質の高いM&A支援を提供することをお約束します。</p>
-                    <a href="pdf/SME_M&A_Guidelines_(3rd_Edition).pdf" target="_blank" rel="noopener noreferrer">» 遵守宣言の詳細はこちら (PDF)</a>
-                </div>
-                <div class="batonz-promo">
-                    <img src="images/batonz_logo.png" alt="BATONZ ロゴ" class="batonz-promo-logo">
-                    <p class="batonz-promo-text">
-                        当事務所はM&A総合支援プラットフォーム「BATONZ」の支援専門家です。<br>
-                        <a href="https://batonz.jp/experts/9354" target="_blank" rel="noopener noreferrer">» 専門家紹介ページはこちら</a>
-                    </p>
-                </div>
+                <!-- ロゴに込めた想いを最初に配置 -->
                 <div class="logo-origin-section flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
                     <img src="images/logo-mark.png" alt="麻生税務会計事務所 ロゴマーク" class="logo-origin-image">
                     <div class="logo-origin-text">
@@ -908,17 +946,37 @@
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-                    <div class="card p-6">
-                        <h3 class="text-lg font-semibold text-primary-dark mb-4">事務所情報</h3>
-                        <div class="space-y-3 text-sm text-gray-600">
-                            <p><strong class="w-24 inline-block"><i class="fas fa-building mr-2 text-primary-accent"></i>事務所名:</strong> 麻生税務会計事務所</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-user mr-2 text-primary-accent"></i>代表者:</strong> 麻生 健治</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-map-marker-alt mr-2 text-primary-accent"></i>所在地:</strong> 〒513-0806 <br class="sm:hidden"><span class="ml-28 sm:ml-0"></span>三重県鈴鹿市算所5-24-22</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-phone-alt mr-2 text-primary-accent"></i>電話番号:</strong> 059-378-4343</p>
-                            <p><strong class="w-24 inline-block"><i class="fas fa-fax mr-2 text-primary-accent"></i>FAX:</strong> 059-378-8684</p>
+                    <!-- 事務所情報とM&A支援体制を左側に配置 -->
+                    <div class="card p-6 md:col-span-1">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-4">事務所情報</h3>
+                        <!-- 事務所情報の文字を大きくする -->
+                        <div class="space-y-3 text-base text-gray-600">
+                            <p class="whitespace-nowrap"><strong class="w-24 inline-block"><i class="fas fa-building mr-2 text-primary-accent"></i>事務所名:</strong> 麻生税務会計事務所</p>
+                            <p class="whitespace-nowrap"><strong class="w-24 inline-block"><i class="fas fa-user mr-2 text-primary-accent"></i>代表者:</strong> 麻生 健治</p>
+                            <p><strong class="w-24 inline-block"><i class="fas fa-map-marker-alt mr-2 text-primary-accent"></i>所在地:</strong> 〒513-0806 三重県鈴鹿市算所5-24-22</p>
+                            <p class="whitespace-nowrap"><strong class="w-24 inline-block"><i class="fas fa-phone-alt mr-2 text-primary-accent"></i>電話番号:</strong> 059-378-4343</p>
+                            <p class="whitespace-nowrap"><strong class="w-24 inline-block"><i class="fas fa-fax mr-2 text-primary-accent"></i>FAX:</strong> 059-378-8684</p>
+                        </div>
+                        
+                        <!-- M&A支援体制の情報を事務所情報内に統合し、控えめに表示 -->
+                        <div class="ma-support-integrated mt-6 text-left">
+                            <h4 class="text-base font-semibold text-primary-dark mb-2">M&A支援体制</h4>
+                            <p class="text-base text-gray-600">
+                                当事務所は、公正なM&A支援を実施するM&A支援機関に登録されており、「中小M&Aガイドライン（第3版）」を遵守しています。
+                                <a href="pdf/SME_M&A_Guidelines_(3rd_Edition).pdf" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline text-sm text-primary-accent">
+                                    遵守宣言の詳細 (PDF)
+                                </a>
+                            </p>
+                            <p class="text-base text-gray-600">
+                                M&A総合支援プラットフォーム「BATONZ」の支援専門家として登録しています。
+                                <a href="https://batonz.jp/experts/9354" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline text-sm text-primary-accent">
+                                    BATONZ専門家ページ
+                                </a>
+                            </p>
                         </div>
                     </div>
-                    <div class="card p-4">
+                    <!-- アクセスマップを右側に配置 -->
+                    <div class="card p-6 md:col-span-1">
                         <h3 class="text-lg font-semibold text-primary-dark mb-3 text-center">アクセスマップ</h3>
                         <div class="map-container">
                              <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E9%88%B4%E9%B9%鹿%E5%B8%82%E7%AE%97%E6%89%805-24-22&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
